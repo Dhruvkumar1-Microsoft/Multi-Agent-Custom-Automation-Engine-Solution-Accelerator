@@ -143,7 +143,10 @@ class OrchestrationManager:
         manager_agent = Agent(manager_chat_client, name="MagenticManager")
 
         # Get prompt customization kwargs
-        prompt_kwargs = get_magentic_prompt_kwargs(has_user_responses=has_user_responses)
+        prompt_kwargs = get_magentic_prompt_kwargs(
+            has_user_responses=has_user_responses,
+            team_config=team_config,
+        )
 
         cls.logger.info(
             "Building MagenticBuilder for user '%s' with max_rounds=%d, "
